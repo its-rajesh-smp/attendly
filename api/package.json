@@ -36,7 +36,8 @@
     "@types/jsonwebtoken": "^9.0.9",
     "@types/module-alias": "^2.0.4",
     "@types/node": "^22.15.12",
-    "tsconfig-paths": "^4.2.0"
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^6.0.3"
   },
   "_moduleAliases": {
     "@": "dist"
