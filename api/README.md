@@ -1,56 +1,54 @@
 # Attendly API
 
-A RESTful API for event management with user authentication, event creation, and RSVP functionality built with Node.js, Express, and Prisma.
+A RESTful API for event management with user authentication, event creation, and RSVP functionality built with Node.js, Express, Prisma, and PostgreSQL.
 
 ## Features
 
-- ✅ User authentication (JWT)
-- ✅ Event creation and management
-- ✅ RSVP system for events
-- ✅ Paginated event listings
-- ✅ Input validation with Zod
-- ✅ TypeScript support
-- ✅ SQLite database (easy to switch to other databases)
+- User authentication with JWT
+- Event creation and management
+- RSVP support for events
+- Paginated event listings
+- Input validation with Zod
+- TypeScript support
+- PostgreSQL with Prisma ORM
 
-## Setup Instructions
+## Setup
 
 ### Prerequisites
 
-- Node.js v16+
-- npm or yarn
-- SQLite (comes with Node.js)
+- Node.js 18+
+- npm
+- PostgreSQL
 
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/its-rajesh-smp/attendly-api.git
-cd event-management-api
-```
-
-### 2. Install dependencies
+### 1. Install dependencies
 
 ```bash
 npm install
 ```
 
-### 3. Set up environment variables
+### 2. Configure environment variables
 
-Copy the example env file and update the values:
+Copy the example file:
 
 ```bash
-cp .env.example .env.dev # for development
-cp .env.example .env.prod # for production
+cp .env.example .env
 ```
 
-### 4. Run database migrations
+Set `DATABASE_URL` to your PostgreSQL connection string, for example:
+
+```env
+DATABASE_URL="postgresql://postgres:postgres@localhost:5432/attendly?schema=public"
+```
+
+### 3. Run Prisma migration
 
 ```bash
 npx prisma migrate dev --name init
 ```
 
-### 5. Start the server
+### 4. Start the API
 
-For development (with hot reload):
+For development:
 
 ```bash
 npm run dev
@@ -63,17 +61,11 @@ npm run build
 npm start
 ```
 
-## Configuration
+## Environment Variables
 
-The following environment variables can be configured:
-
-| Variable           | Description                      | Default           |
-| ------------------ | -------------------------------- | ----------------- |
-| PORT               | Server port                      | 3000              |
-| DATABASE_URL       | Database connection URL          | \`file:./dev.db\` |
-| JWT_SECRET         | Secret for JWT tokens            | \`secret\`        |
-| BCRYPT_SALT_ROUNDS | Salt rounds for password hashing | 10                |
-
-## License
-
-This project has no license since it's a personal project, you can use it however you want.
+| Variable | Description | Example |
+| --- | --- | --- |
+| `PORT` | API server port | `3000` |
+| `DATABASE_URL` | PostgreSQL connection string | `postgresql://postgres:postgres@localhost:5432/attendly?schema=public` |
+| `JWT_SECRET` | Secret used to sign JWTs | `super-secret` |
+| `BCRYPT_SALT_ROUNDS` | Salt rounds for password hashing | `10` |
