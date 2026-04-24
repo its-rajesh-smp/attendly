@@ -1,7 +1,7 @@
-import { HttpStatus } from "@/constants";
-import { EventDTO } from "@/dtos";
-import { EventService } from "@/services";
-import { sendResponse } from "@/utils";
+import { HttpStatus } from "../constants";
+import { EventDTO } from "../dtos";
+import { EventService } from "../services";
+import { sendResponse } from "../utils";
 import { Request, Response } from "express";
 
 /**

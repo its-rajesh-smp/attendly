@@ -1,5 +1,5 @@
-import { EventController } from "@/controllers";
-import { AuthMiddleware, OptionalAuthMiddleware } from "@/middlewares";
+import { EventController } from "../controllers";
+import { AuthMiddleware, OptionalAuthMiddleware } from "../middlewares";
 import express from "express";
 
 const router = express.Router();

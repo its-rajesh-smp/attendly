@@ -1,5 +1,3 @@
-import { LoggerUtl } from ".";
-
 /**
  * Retrieves an environment variable by its key.
  *
@@ -17,4 +15,8 @@ const getEnv = (key: string) => {
   return process.env[key];
 };
 
-export default { getEnv };
+const getOptionalEnv = (key: string, fallback?: string) => {
+  return process.env[key] || fallback;
+};
+
+export default { getEnv, getOptionalEnv };

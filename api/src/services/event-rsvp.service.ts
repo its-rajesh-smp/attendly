@@ -1,4 +1,4 @@
-import { prisma, PrismaTypes } from "@/config/prisma.conf";
+import { prisma, PrismaTypes } from "../config/prisma.conf";
 
 /**
  * Find one eventRsvp that matches the condition.

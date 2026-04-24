@@ -7,18 +7,20 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/index.ts",
-    "build": "tsc",
-    "start": "NODE_ENV=production node dist/index.js",
-    "pm2:start:prod": "NODE_ENV=production pm2 start dist/index.js --name attendly-api",
-    "pm2:restart:prod": "NODE_ENV=production pm2 restart attendly-api || pm2 start dist/index.js --name attendly-api",
-    "prisma:migrate": "dotenv -e .env.dev -- npx prisma migrate dev",
-    "prisma:migrate:prod": "dotenv -e .env.prod -- npx prisma migrate dev",
-    "prisma:generate": "dotenv -e env.dev -- npx prisma generate",
-    "prisma:generate:prod": "dotenv -e env.prod -- npx prisma generate"
+    "dev": "tsx watch src/index.ts",
+    "build": "prisma generate && tsc",
+    "build:ts": "tsc",
+    "postinstall": "prisma generate",
+    "start": "node dist/src/index.js",
+    "pm2:start:prod": "pm2 start dist/src/index.js --name attendly-api",
+    "pm2:restart:prod": "pm2 restart attendly-api || pm2 start dist/src/index.js --name attendly-api",
+    "prisma:migrate": "dotenv -e .env -- prisma migrate dev",
+    "prisma:migrate:prod": "dotenv -e .env -- prisma migrate deploy",
+    "prisma:generate": "dotenv -e .env -- prisma generate",
+    "prisma:generate:prod": "dotenv -e .env -- prisma generate"
   },
   "dependencies": {
-    "@prisma/client": "^6.7.0",
+    "@prisma/client": "6.7.0",
     "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
@@ -26,7 +28,6 @@
     "express": "^5.1.0",
     "express-rate-limit": "^7.5.0",
     "jsonwebtoken": "^9.0.2",
-    "module-alias": "^2.2.3",
     "zod": "^3.24.4"
   },
   "devDependencies": {
@@ -34,12 +35,10 @@
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.1",
     "@types/jsonwebtoken": "^9.0.9",
-    "@types/module-alias": "^2.0.4",
     "@types/node": "^22.15.12",
+    "prisma": "6.7.0",
     "tsconfig-paths": "^4.2.0",
+    "tsx": "^4.19.4",
     "typescript": "^6.0.3"
-  },
-  "_moduleAliases": {
-    "@": "dist"
   }
 }

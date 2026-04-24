@@ -1,7 +1,7 @@
-import { ErrorMessages } from "@/constants";
-import { UserService } from "@/services";
-import { DecodedUserJWT } from "@/types/others.type";
-import { JWTUtil, sendErrorResponse } from "@/utils";
+import { ErrorMessages } from "../constants";
+import { UserService } from "../services";
+import { DecodedUserJWT } from "../types/others.type";
+import { JWTUtil, sendErrorResponse } from "../utils";
 import { NextFunction, Request, Response } from "express";
 
 export const OptionalAuthMiddleware = async (

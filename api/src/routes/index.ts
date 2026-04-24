@@ -1,4 +1,4 @@
-import { IRoute } from "@/types/route.type";
+import { IRoute } from "../types/route.type";
 import express from "express";
 import eventRsvpRoutes from "./event-rsvp.route";
 import eventRoutes from "./event.route";

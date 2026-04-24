@@ -1,4 +1,4 @@
-import { ErrorMessages, ErrorMessagesToKeyMap, HttpStatus } from "@/constants";
+import { ErrorMessages, ErrorMessagesToKeyMap, HttpStatus } from "../constants";
 import { Response } from "express";
 import { ZodError } from "zod";
 import { ZodUtil } from ".";

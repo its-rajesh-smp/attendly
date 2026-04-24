@@ -1,7 +1,7 @@
-import { ErrorMessages, HttpStatus } from "@/constants";
-import { EventRsvpDTO } from "@/dtos";
-import { EventRsvpService } from "@/services";
-import { sendErrorResponse, sendResponse } from "@/utils";
+import { ErrorMessages, HttpStatus } from "../constants";
+import { EventRsvpDTO } from "../dtos";
+import { EventRsvpService } from "../services";
+import { sendErrorResponse, sendResponse } from "../utils";
 import { Request, Response } from "express";
 
 /**

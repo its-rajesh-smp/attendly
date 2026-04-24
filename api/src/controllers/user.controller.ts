@@ -1,7 +1,7 @@
-import { ErrorMessages, HttpStatus } from "@/constants";
-import { UserDTO } from "@/dtos";
-import { UserService } from "@/services";
-import { BcryptUtil, JWTUtil, sendErrorResponse, sendResponse } from "@/utils";
+import { ErrorMessages, HttpStatus } from "../constants";
+import { UserDTO } from "../dtos";
+import { UserService } from "../services";
+import { BcryptUtil, JWTUtil, sendErrorResponse, sendResponse } from "../utils";
 import { Request, Response } from "express";
 
 /**

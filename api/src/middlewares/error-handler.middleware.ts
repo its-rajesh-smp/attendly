@@ -1,5 +1,5 @@
-import { ErrorMessages } from "@/constants";
-import { LoggerUtl, sendErrorResponse } from "@/utils";
+import { ErrorMessages } from "../constants";
+import { LoggerUtl, sendErrorResponse } from "../utils";
 import { NextFunction, Request, Response } from "express";
 
 const ErrorHandler = (
